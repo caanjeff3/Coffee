@@ -25,7 +25,7 @@ document.getElementById("BuyBrewer").onclick = () => {
   if (funds - BrewerCost >= 0) {
     funds = funds - BrewerCost;
     brewers++;
-    BrewerCost = BrewerCost * 1.12;
+    BrewerCost = BrewerCost * 1.15;
   }
 };
 
@@ -33,7 +33,7 @@ document.getElementById("HireBarista").onclick = () => {
   if (funds - BaristaCost >= 0) {
     funds = funds - BaristaCost;
     baristas++;
-    BaristaCost = BaristaCost * 1.18;
+    BaristaCost = BaristaCost * 1.15;
   }
 };
 
@@ -74,7 +74,7 @@ setInterval(() => {
       "Funds: $" + funds.toLocaleString(1) + " (+" + baristas + " /s)";
   } else {
     document.getElementById("Funds").innerText =
-      "Funds: $" + funds.toLocaleString(1);
+      "Funds: $" + funds.toLocaleString(2);
   }
 
   document.getElementById("AmntBrewers").innerText =
@@ -88,7 +88,7 @@ setInterval(() => {
     "Cost: " + BaristaCost.toLocaleString(1) + "$";
   document.getElementById("UpgradeFilterLabel").innerText =
     "Cost: " + Upgrade1Cost.toLocaleString(1) + "$";
-}, 100);
+}, 50);
 
 //every 1s apply automations
 setInterval(() => {
