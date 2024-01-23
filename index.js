@@ -7,6 +7,7 @@ let baristas = 0;
 let CoffeeMult = 1;
 let SellMult = 1;
 let Upgrade1Cost = 100;
+let Upgrade2Cost = 100;
 
 //TODO Document func and like yk make it look not doodoo
 
@@ -44,6 +45,16 @@ document.getElementById("UpgradeFilter").onclick = () => {
     Upgrade1Cost = Upgrade1Cost * 1.325;
   }
 };
+
+
+document.getElementById("UpgradeMarketing").onclick = () => {
+  if (funds - Upgrade2Cost >= 0) {
+    funds = funds - Upgrade2Cost;
+    SellMult++;
+    Upgrade2Cost = Upgrade2Cost * 1.325;
+  }
+};
+
 
 setInterval(() => {
   if (brewers > baristas) {
@@ -88,6 +99,8 @@ setInterval(() => {
     "Cost: " + BaristaCost.toLocaleString(1) + "$";
   document.getElementById("UpgradeFilterLabel").innerText =
     "Cost: " + Upgrade1Cost.toLocaleString(1) + "$";
+    document.getElementById("UpgradeMarketingLabel").innerText =
+    "Cost: " + Upgrade2Cost.toLocaleString(1) + "$";
 }, 50);
 
 //every 1s apply automations
