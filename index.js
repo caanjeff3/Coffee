@@ -102,7 +102,7 @@ setInterval(() => {
     document.getElementById("UpgradeMarketingLabel").innerText =
     "Cost: " + Upgrade2Cost.toLocaleString(1) + "$";
 }, 50);
-
+//yeah idk
 //every 1s apply automations
 setInterval(() => {
   coffee = coffee + brewers;
