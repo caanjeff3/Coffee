@@ -8,7 +8,7 @@ let CoffeeMult = 1;
 let SellMult = 1;
 let Upgrade1Cost = 100;
 let Upgrade2Cost = 100;
-
+let RandomConsoleStuff = ["Why are you in here?","Cheating isnt very nice","Haii"];
 //TODO Document func and like yk make it look not doodoo
 
 document.getElementById("MakeCoffee").onclick = () => {
@@ -111,3 +111,7 @@ setInterval(() => {
     funds = funds + baristas;
   }
 }, 1000);
+
+setInterval(() => {
+
+}, 5000)
