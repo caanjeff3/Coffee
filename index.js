@@ -113,5 +113,5 @@ setInterval(() => {
 }, 1000);
 
 setInterval(() => {
-
+  console.log(RandomConsoleStuff[(Math.floor(Math.random() * RandomConsoleStuff.length))]);
 }, 5000)
