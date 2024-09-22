@@ -56,13 +56,20 @@ handleClick("SellCoffee", () => {
 
 handleClick("BuyBrewer", () => {
   if (purchaseItem(Game.BrewerCost, 1.15)){
-  Game.brewers++}
+    Game.brewers++;
+    Game.BrewerCost *= 1.15; // Update cost
+    updateLabels(); // Refresh labels
+  }
 });
 
 handleClick("HireBarista", () => {
   if (purchaseItem(Game.BaristaCost, 1.15)){
-  Game.baristas++}
+    Game.baristas++;
+    Game.BaristaCost *= 1.15; // Update cost
+    updateLabels(); // Refresh labels
+  }
 });
+
 
 handleClick("UpgradeFilter", () => {
   if (Game.funds - Game.Upgrade1Cost >= 0) {
