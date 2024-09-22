@@ -36,7 +36,8 @@ function purchaseItem(cost, costMultiplier) {
   if (Game.funds - cost >= 0) {
     Game.funds -= cost;
     cost *= costMultiplier;
-  }
+    return true
+  } else {return false}
 }
 
 // Event handlers for button clicks
@@ -54,13 +55,13 @@ handleClick("SellCoffee", () => {
 });
 
 handleClick("BuyBrewer", () => {
-  purchaseItem(Game.BrewerCost, 1.15);
-  Game.brewers++;
+  if (purchaseItem(Game.BrewerCost, 1.15)){
+  Game.brewers++}
 });
 
 handleClick("HireBarista", () => {
-  purchaseItem(Game.BaristaCost, 1.15);
-  Game.baristas++;
+  if (purchaseItem(Game.BaristaCost, 1.15)){
+  Game.baristas++}
 });
 
 handleClick("UpgradeFilter", () => {
