@@ -26,18 +26,16 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-// Function to handle button clicks
 function handleClick(id, callback) {
   document.getElementById(id).onclick = callback;
 }
 
-// Function to handle purchasing items
-function purchaseItem(cost, costMultiplier) {
-  if (Game.funds - cost >= 0) {
+function purchaseItem(cost) {
+  if (Game.funds >= cost) {
     Game.funds -= cost;
-    cost *= costMultiplier;
-    return true
-  } else {return false}
+    return true;
+  }
+  return false;
 }
 
 // Event handlers for button clicks
@@ -55,18 +53,18 @@ handleClick("SellCoffee", () => {
 });
 
 handleClick("BuyBrewer", () => {
-  if (purchaseItem(Game.BrewerCost, 1.15)){
+  if (purchaseItem(Game.BrewerCost)) {
     Game.brewers++;
-    Game.BrewerCost *= 1.15; // Update cost
-    updateLabels(); // Refresh labels
+    Game.BrewerCost *= 1.15;
+    updateLabels();
   }
 });
 
 handleClick("HireBarista", () => {
-  if (purchaseItem(Game.BaristaCost, 1.15)){
+  if (purchaseItem(Game.BaristaCost)) {
     Game.baristas++;
-    Game.BaristaCost *= 1.15; // Update cost
-    updateLabels(); // Refresh labels
+    Game.BaristaCost *= 1.15;
+    updateLabels();
   }
 });
 
